@@ -14,8 +14,10 @@ const socketController = async (socket , io)=>{
 
    //  con la propiedad del socket join lo uno a alguna sala especial
     socket.join( usuario.id )
-    io.emit('usuarios-activos',chatMensaje.usuariosArr)
 
+   //  muestro mi arr de usuario conectados
+    io.emit('usuarios-activos',chatMensaje.usuariosArr)
+   //  muestro mi  arr de mensajes(ultimos 10)
     io.emit('recibir-mensaje',chatMensaje.ultimos10Mensajes)
 
 // elimino de la lista a el usuario que se desconecta
